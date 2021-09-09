@@ -13,18 +13,39 @@ function App() {
 
   const [next,setNext] = useState([])
 
+  const [botaonext,setBotaonext]= useState("Proxima página")
+
   useEffect(()=>{
-    fetch("https://rickandmortyapi.com/api/character")
+    fetch(`https://rickandmortyapi.com/api/character?page=${page+1}`)
+    .then((response)=>response.json())
+    .then((response)=>setNext(response.results))
+    .catch(((err)=>console.log(err)))
+  },[page])
+
+  useEffect(()=>{
+    fetch(`https://rickandmortyapi.com/api/character?page=${page}`)
     .then((response)=>response.json())
     .then((response)=>setCaracterList(response.results))
     .catch(((err)=>console.log(err)))
-  },[])
+  },[page])
 
-  console.log(caracterList)
+  function nextPage (){
+    if(page<34){
+      console.log("next:",next)
+      setCaracterList(next)
+      setPage(page+1)
+    } else {
+      setBotaonext("Essa é a última página")
+    }
+    
+  }
+  
+
   return (
     <div className="App">
       <header className="App-header">
       <Characters personagens={caracterList}/>
+      <p onClick={nextPage} className="link">{botaonext}</p>
       </header>
     </div>
   );
