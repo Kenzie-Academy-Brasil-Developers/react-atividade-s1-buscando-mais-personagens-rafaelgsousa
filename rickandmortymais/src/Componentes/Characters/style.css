@@ -1,0 +1,15 @@
+.Lista {
+    box-sizing: border-box;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 10px auto;
+}
+.card {
+    box-sizing: border-box;
+    width: 18%;
+    height: 300px;
+    margin: 5px;
+}

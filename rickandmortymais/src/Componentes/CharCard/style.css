@@ -1,0 +1,26 @@
+.itemverde {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #9ABF4B;
+    height: 100%;
+    padding-top: 10px;
+    margin-bottom: 5px;
+}
+.itemoutro {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #593431;
+    height: 100%;
+    padding-top: 10px;
+    margin-bottom: 5px; 
+}
+p{
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+img {
+    width: 80%;
+    object-fit: fill;
+}
